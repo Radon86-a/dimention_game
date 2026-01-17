@@ -3,20 +3,15 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    [SerializeField] private InputData inputData;
+    [SerializeField] private SettingData settingData;
     void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
+        inputData.spaceKey_isPlessed = Keyboard.current[settingData.SpaceKey].wasPressedThisFrame;
+        inputData.leftButton_isClicked = Mouse.current.leftButton.wasPressedThisFrame;
+        inputData.rightButton_isClicked = Mouse.current.rightButton.wasPressedThisFrame;
             
-        }
-        if (Mouse.current.rightButton.wasPressedThisFrame)
-        {
-            
-        }
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            
-        }
+        
         if (Keyboard.current.wKey.wasPressedThisFrame)
         {
             
